@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <style type="text/css">
+      #console {
+        background-color: black;
+        color: green;
+        font-family: monospace;
+        width: 80%;
+        min-height: 2em;
+        max-height: 50em;
+        overflow-y: scroll;
+      }
+
+      li {
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: contain;
+      }
+
+      ul#asset_list.initialized li {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogcmVkOyIgZD0iTTEyIDBjLTYuNjI3IDAtMTIgNS4zNzMtMTIgMTJzNS4zNzMgMTIgMTIgMTIgMTItNS4zNzMgMTItMTItNS4zNzMtMTItMTItMTJ6bTQuMTUxIDE3Ljk0M2wtNC4xNDMtNC4xMDItNC4xMTcgNC4xNTktMS44MzMtMS44MzMgNC4xMDQtNC4xNTctNC4xNjItNC4xMTkgMS44MzMtMS44MzMgNC4xNTUgNC4xMDIgNC4xMDYtNC4xNiAxLjg0OSAxLjg0OS00LjEgNC4xNDEgNC4xNTcgNC4xMDQtMS44NDkgMS44NDl6Ii8+PC9zdmc+');
+        color: red;
+        padding-left: 25px;
+      }
+
+      ul#asset_list.initialized li.cached {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptLTEuMjUgMTcuMjkybC00LjUtNC4zNjQgMS44NTctMS44NTggMi42NDMgMi41MDYgNS42NDMtNS43ODQgMS44NTcgMS44NTctNy41IDcuNjQzeiIvPjwvc3ZnPg==');
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic Caching</h1>
+    <p>Basic service worker implementation with an empty cache which is accessed and updated by client pages.</p>
+
+    <h2>Articles &amp; Assets</h2>
+    <ul id="asset_list">
+      <li id="static.js">static.js</li>
+      <li id="article-1.html">article-1.html</li>
+      <li id="article-2.html">article-2.html</li>
+      <li id="article-3.html">article-3.html</li>
+      <li id="article-4.html">article-4.html</li>
+      <li id="article-5.html">article-5.html</li>
+    </ul>
+
+    <button type="button" id="update_status">Update Cache Status</button>
+    <button type="button" id="cache_3to5">Cache Articles 3 - 5</button>
+    <button type="button" id="clear_cache">Clear Cache</button>
+
+    <h2>Debug Log</h2>
+    <div id="console"></div>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
